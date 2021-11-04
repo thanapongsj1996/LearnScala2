@@ -23,10 +23,41 @@ object s2e4Function extends App {
 
 
 
+  def greetingFunction(name: String, age: Int) = {
+    "Hi, name is " + name + " and I am " + age + " years old."
+  }
+  println(greetingFunction("Thanapong", 25))
 
+  def factorialFunc(n: Int): Int = {
+    if (n <= 0) 1
+    else n * factorialFunc(n - 1)
+  }
+  println(factorialFunc(3))
 
+  def fiboFunc(n: Int): Int = {
+    if (n <= 2) 1
+    else fiboFunc(n - 1) + fiboFunc(n - 2)
+  }
+  println(fiboFunc(7))
 
+  def isPrime(n: Int): Boolean = {
+    val endNum = Math.sqrt(n).toInt
 
+    def helper(d: Int): Boolean = {
+      if (d > endNum) true
+      else if (n % d == 0) false
+      else helper(d+1)
+    }
 
-
+    helper(2)
+  }
+  println("isPrime(2) : " + isPrime(2))
+  println("isPrime(3) : " + isPrime(3))
+  println("isPrime(4) : " + isPrime(4))
+  println("isPrime(5) : " + isPrime(5))
+  println("isPrime(6) : " + isPrime(6))
+  println("isPrime(10) : " + isPrime(10))
+  println("isPrime(17) : " + isPrime(17))
+  println("isPrime(37) : " + isPrime(37))
+  println("isPrime(2003) : " + isPrime(2003))
 }
