@@ -51,6 +51,14 @@ object s2e4Function extends App {
 
     helper(2)
   }
+
+  def isPrime2(n: Int): Boolean = {
+    def isPrimeUtil(t: Int): Boolean =
+      if (t <= 1) true
+      else n % t != 0 && isPrimeUtil(t - 1)
+
+    isPrimeUtil(n/2)
+  }
   println("isPrime(2) : " + isPrime(2))
   println("isPrime(3) : " + isPrime(3))
   println("isPrime(4) : " + isPrime(4))
